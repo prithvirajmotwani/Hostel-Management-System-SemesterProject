@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+
+{% block main_part %}
+
+
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Room number</th>
+                    <th scope="col">Name2</th>
+                    <th scope="col">Room number2</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in object %}
+
+                <tr>
+                    <th scope="row">{{obj.req_name}}</th>
+                    <td>{{obj.req_room}}</td>
+                    <td>{{obj.with_name}}</td>
+                    <td>{{obj.with_room}}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    
+
+{% endblock main_part %}

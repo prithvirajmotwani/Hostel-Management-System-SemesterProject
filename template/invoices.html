@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+
+{% block css_part%}
+  
+  <!-- CSS -->
+  #file-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  #file-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #file-input {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #file-form input[type="submit"] {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+{% endblock css_part %}
+
+{% block main_part %}
+
+
+<form id="file-form" action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="file-input">Choose a file:</label>
+    <input type="file" id="file-input" name="file-name" />
+    <input type="submit" value="Upload File" />
+  </form>
+  
+  
+
+{% endblock main_part%}

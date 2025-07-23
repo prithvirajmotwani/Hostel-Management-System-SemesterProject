@@ -1,0 +1,40 @@
+{% extends 'home.html' %}
+
+{% block main_part %}
+
+
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Room number</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Guardian Phone Number</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in object %}
+
+                <tr>
+                    <th scope="row">{{student.get(cmsId = obj.cmsId).fullName }}</th>
+                    {% comment %} <th scope="row">Naam</th> {% endcomment %}
+                    {% comment %} <td>{{student.get(cmsId = obj.cmsId).fullName}}</td> {% endcomment %}
+                    <td>Room Number</td>
+                    <td>{{obj.From_date}}</td>
+                    <td>{{obj.To_date}}</td>
+                    <td>{{obj.reason}}</td>
+                    {% comment %} <td>{{student.get(cmsId = obj.cmsId).guardianPhoneNumber}}</td> {% endcomment %}
+                    <td>Phone number</td>
+                    <td>Approve</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    
+
+{% endblock main_part %}

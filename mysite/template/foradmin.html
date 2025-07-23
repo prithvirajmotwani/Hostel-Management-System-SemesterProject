@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block content %}
+    <h1>Total Accounts</h1>
+
+
+    {% for sobj in obj %}
+        <h3>{{ sobj.username }} : {{ sobj.password }}</h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,212 @@
+{% extends 'home.html' %}
+
+{% block css_part %}
+
+.data:disabled{
+    background : #fff;
+}
+.form-control{
+    width : 350px;
+    background : rgba(0,0,0,3% );
+}
+
+.card {
+position: relative;
+{% comment %} display: flex;
+flex-direction: column; {% endcomment %}
+min-width: 0;
+width: 600px;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border: 1 solid transparent;
+border-radius: .25rem;
+margin-bottom: 1.5rem;
+box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+.card-body{width : 100% }
+{% comment %} .me-2 {
+margin-right: .5rem!important;
+} {% endcomment %}
+{% endblock css_part %}
+
+{% block script_ %}
+function update(btn){
+
+if (btn.value == "Edit"){
+
+    var inputs = document.getElementsByClassName('data');
+
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].disabled=false;
+    }
+    btn.classList.replace("btn-primary", "btn-success");
+    btn.value="Save" ;
+    
+}
+else{
+    document.getElementById("profileFormId").submit();
+    
+} }
+    {% endblock script_ %}
+    {% block main_part %} 
+    
+    
+    
+    
+    <div class="container">
+    <div class="main-body">
+
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                class="rounded-circle" width="150">
+                                
+
+
+                            {% comment %} <img src="../basic_form/{{data.img}}" alt="Admin_alt" class="rounded-circle"
+                                width="150"> {% endcomment %}
+
+                            <div class="mt-3">
+
+                                <h4>{{ user.fullName }}</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <form action="/profile" id="profileFormId" method = "POST">
+                    <fieldset>
+                        {% csrf_token %}
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <table>
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Full Name</span></th>
+                                                <th>
+                                                    <div id="TextInput" class="form-control">{{ user.fullName }}</div>
+                                                </th>
+                                            </div>
+                                        </tr>
+                                        {% if not flag %}
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">CMS ID</span></th>
+                                                <th>
+                                                    <div id="TextInput" class="form-control">{{ user.cmsId }}</div>
+                                                </th>
+                                            </div>
+                                        </tr>
+                                        {% endif %}
+
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Phone number</span></th>
+                                                <th><input type="text" id="disabledTextInput" name="phoneNumber"
+                                                        class="form-control data" disabled
+                                                        placeholder="{{ user.phoneNumber }}"></th>
+                                            </div>
+                                        </tr>
+                                        
+                                        {% if not flag %}
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Department</span></th>
+                                                <th><input type="text" id="TextInput" name="dept"
+                                                        class="form-control data" placeholder="{{ user.department }}"
+                                                        disabled></th>
+
+                                            </div>
+                                        </tr>
+                                        {% endif %}
+
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Hostel</span></th>
+                                                <th>
+                                                    <div id="TextInput" class="form-control">{{ user.hostel }}</div>
+                                                </th>
+                                            </div>
+                                        </tr>
+
+                                        {% if not flag %}
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Room number</span></th>
+                                                <th>
+                                                    <div id="TextInput" class="form-control">{{ user.roomNumber }}</div>
+                                                </th>
+
+                                            </div>
+                                        </tr>
+
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Guardian's Name</span></th>
+                                                <th><input type="text" id="TextInput" name="GName"
+                                                        class="form-control data" placeholder="{{ user.guardianName }}"
+                                                        disabled></th>
+                                            </div>
+                                        </tr>
+
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Guardian phone number</span></th>
+                                                <th><input type="text" id="TextInput" name="GNum"
+                                                        class="form-control data"
+                                                        placeholder="{{ user.guardianPhoneNumber }}" disabled></th>
+
+                                            </div>
+                                        </tr>
+
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Permenant Address</span></th>
+                                                <th><input type="text" id="TextInput" name="pAddr"
+                                                        class="form-control data"
+                                                        placeholder="{{ user.permenantAddress }}" disabled></th>
+                                            </div>
+                                        </tr>
+
+                                        {% endif %}
+                                        
+
+                                        {% if flag %}
+                                        <tr>
+                                            <div class="input-group">
+                                                <th><span class="input-group-text">Email Address</span></th>
+                                                <th><input type="text" id="TextInput" name="emailAddress"
+                                                        class="form-control data"
+                                                        placeholder="{{ user.emailAddress }}" disabled></th>
+                                            </div>
+                                        </tr>
+                                        
+                                        {% endif %}
+                                        <tr>
+                                            <input type="button" class="btn btn-primary" onclick="update(this)"
+                                                value="Edit">
+                                            </input>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {% endblock main_part %}

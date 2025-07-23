@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+
+{% block main_part %}
+
+<h1>Create new account</h1>
+<form action="/create-account" method=post
+    oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "" ) '>
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label" for="username">Username(muhammad.gh1):</label>
+        <input id="username" class="form-control" type=text required name="cms_id">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password1">Password:</label>
+        <input id="password1" class="form-control" type=password required name=up>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password2">Confirm password:</label>
+        <input id="password2" class=" form-control" type=password name=up2>
+    </div>
+    <div class="mb-3">
+        <input class="btn btn-primary" type=submit value="Create account">
+    </div>
+</form>
+
+
+{% endblock main_part %}

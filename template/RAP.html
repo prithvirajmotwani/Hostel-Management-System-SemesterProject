@@ -1,0 +1,20 @@
+{%extends 'home.html' %}
+
+{% block main_part%}
+
+<form method="POST" action="\report-a-problem" class="container">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label for="reason" class="form-label">Description</label>
+      <input type="text" class="form-control" id="reason" name="desc">
+    </div> 
+    <div class="mb-3">
+      <label for="to_date" class="form-label">Image (optional)</label>
+      <input type="file" class="form-control" id="toDate" name="img" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+{% endblock main_part%}

@@ -1,0 +1,74 @@
+{% extends 'home.html' %}
+
+
+{% block css_part %}
+body {
+font-family: Arial, sans-serif;
+padding: 20px;
+}
+
+h1 {
+text-align: center;
+}
+
+form {
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+}
+
+input[type="text"] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+
+}
+
+{% endblock css_part %}
+
+
+{% block main_part %}
+    
+        
+        <h1>Room Changing Form</h1>
+        <form method='POST' action="/roomChange">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Your name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="req_name">
+
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Your room</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" name="req_room">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="with_name">
+
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">room</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" name="with_room">
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+        
+
+        
+
+{% endblock main_part %}

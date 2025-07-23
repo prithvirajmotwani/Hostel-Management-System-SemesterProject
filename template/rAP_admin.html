@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block script_%}
+function fun1() = {
+    const list = self.classList;
+    if ("btn-success" in list){
+        list.replace("btn-success", "btn-danger")
+    }
+    else{list.replace( "btn-danger","btn-success")}
+}
+{% endblock script_%}
+
+{% block main_part %}
+
+
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date & Time</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in object %}
+
+                <tr>
+                    {% comment %} <th scope="row">{{obj.img}}</th> {% endcomment %}
+                    <td>{{obj.descrip}}</td>
+                    {% comment %} <td>{{obj.d_time}}</td> {% endcomment %}
+                    <td>
+                        <button class="btn btn-success" onclick="fun1()" >Approve</button>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    
+
+{% endblock main_part %}

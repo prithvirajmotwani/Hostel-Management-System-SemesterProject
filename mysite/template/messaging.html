@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+</head>
+<body>
+    <section>
+    {% for value in total_msgs %}
+{#        {% for ind, val in value.items %}#}
+            <div>
+                <div>{{ value.msg }}</div>
+                <div>{{ value.time }}</div>
+            </div>
+{#        {% endfor %}#}
+{#        <h2>{{ msg }}</h2>#}
+
+    {% endfor %}
+    </section>
+    <div>
+        <form action="/message" method="post">
+            {% csrf_token %}
+
+            <input type="text" name="next_msg" placeholder="Enter your message">
+            <input type="submit" name="save">
+
+        </form>
+    </div>
+
+
+</body>
+</html>

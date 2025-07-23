@@ -1,0 +1,131 @@
+{% extends 'home.html' %}
+
+{% block main_part %}
+<form method="post" action="/invoices/submit" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="btn-group mb-3" role="group" >
+        <input type="radio" class="btn-check" name="billType" value="MB" id="btnradio0" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio0">Mess Bill</label>
+      
+        <input type="radio" class="btn-check" name="billType" value="RB" id="btnradio01" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio01">Rent Bill</label>
+      
+    </div>
+
+    <div class="btn-group mb-3" role="group" >
+
+        <input type="radio" class="btn-check" name="month" id="btnradio1" value="January" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio1" >January</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio2" value="February" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">February</label>
+
+        <input type="radio" class="btn-check" name="month" id="btnradio3" value="March" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio3">March</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio4" value="April" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio4">April</label>
+
+        <input type="radio" class="btn-check" name="month" id="btnradio5" value="May" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio5">May</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio7" value="June" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio7">June</label>
+
+        <input type="radio" class="btn-check" name="month" id="btnradio7.5" value="July" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio7.5">July</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio8" value="August" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio8">August</label>
+
+        <input type="radio" class="btn-check" name="month" id="btnradio9" value="September" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio9">September</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio10" value="October" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio10">October</label>
+
+        <input type="radio" class="btn-check" name="month" id="btnradio11" value="November" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio11">November</label>
+      
+        <input type="radio" class="btn-check" name="month" id="btnradio12" value="December" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio12">December</label>
+      
+    </div>
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Ghazali-1</label>
+        <input class="form-control" name="Ghazali-1" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Ghazali-2</label>
+        <input class="form-control" name="Ghazali-2" type="file" id="formFile" accept=".pdf">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Razi-1</label>
+        <input class="form-control" name="Razi-1" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Razi-2</label>
+        <input class="form-control" name="Razi-2" type="file" id="formFile" accept=".pdf">
+    </div>
+
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Hajveri</label>
+        <input class="form-control" name="Hajveri" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Zakaria</label>
+        <input class="form-control" name="Zakaria" type="file" id="formFile" accept=".pdf">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Rumi-1</label>
+        <input class="form-control" name="Rumi-1" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Rumi-2</label>
+        <input class="form-control" name="Rumi-2" type="file" id="formFile" accept=".pdf">
+    </div>
+
+<div class="mb-3">
+        <label for="formFile" class="form-label">Rumi-3</label>
+        <input class="form-control" name="Rumi-3" type="file" id="formFile" accept=".pdf">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Zainab</label>
+        <input class="form-control" name="Zainab" type="file" id="formFile" accept=".pdf">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Ayesha</label>
+        <input class="form-control" name="Ayesha" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Amna</label>
+        <input class="form-control" name="Amna" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Fatima-1</label>
+        <input class="form-control" name="Fatima-1" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Fatima-2</label>
+        <input class="form-control" name="Fatima-2" type="file" id="formFile" accept=".pdf">
+    </div>
+    <div class="mb-3">
+       
+        
+            <button type="submit" class="btn btn-success">Upload</button>
+        </form>
+        
+    </div>
+
+
+{% endblock main_part %}

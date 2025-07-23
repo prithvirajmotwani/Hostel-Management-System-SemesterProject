@@ -1,0 +1,58 @@
+{% extends 'home.html' %}
+
+{% block script_ %}
+    function SomeDeleteRowFunction() {
+     var td = event.target.parentNode;
+      var tr = td.parentNode; // the row to be removed
+      tr.parentNode.removeChild(tr);
+
+
+    }
+{% endblock script_ %}
+
+{% block main_part %}
+    <h2>Student</h2>
+    <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Msg</th>
+      <th scope="col">Time</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+    <tbody>
+    {% for value in total %}
+
+
+    <tr>
+      <th scope="row">{{ value.msg }}</th>
+      <td>{{ value.d_time }}</td>
+      <td>
+          <form method="post">
+              {% csrf_token %}
+              <Button class="btn btn-danger" type="submit" onclick="SomeDeleteRowFunction()">Delete</Button></form>
+      </td>
+    </tr>
+
+
+    {% endfor %}
+    </tbody>
+    </table>
+
+    {% block form_ %}{% endblock form_ %}
+
+
+
+    <h1>Admin section : </h1>
+    <form method="post" action="/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Notification message: </label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="msg" placeholder="Enter notification">
+            <small id="emailHelp" class="form-text text-muted">Notification Message : </small>
+
+            <button type="submit"> SUBMIT</button>
+        </div>
+    </form>
+
+{% endblock main_part %}

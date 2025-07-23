@@ -1,0 +1,95 @@
+body {
+    font-family: "Raleway", sans-serif;
+  }
+
+.container {
+   margin: 0;
+   max-width: 100%;
+}
+
+.navbar-brand{
+    float: left;
+    padding-left: 15px;
+    color: white;
+
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3E6D9C;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border: none;
+  }
+
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #FFF;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: black;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  
+  .openbtn button:hover {
+    color : #FFB200;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+.navbar-brand:hover{
+    color: #FFB200;
+}
+
+.navbar-nav a{
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar-nav a:hover{
+    color: #FFB200;
+}
+
+#bg_blue {
+    background-color: #3E6D9C;
+    
+}
+
+        
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #3E6D9C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    
+  }

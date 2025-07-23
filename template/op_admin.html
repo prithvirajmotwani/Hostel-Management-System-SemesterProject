@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+
+{% block script_%}
+function fun1() = {
+    const list = self.classList;
+    if ("btn-success" in list){
+        list.replace("btn-success", "btn-danger")
+    }
+    else{list.replace( "btn-danger","btn-success")}
+}
+{% endblock script_%}
+
+{% block main_part %}
+
+
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">From Date</th>
+                    <th scope="col">To Date</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Approval</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in object %}
+
+                <tr>
+                    <th scope="row">{{obj.From_date}}</th>
+                    <td>{{obj.To_date}}</td>
+                    <td>{{obj.reason}}</td>
+                    <td>
+                        <button class="btn btn-success" onclick="fun1()" >Approve</button>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    
+
+{% endblock main_part %}

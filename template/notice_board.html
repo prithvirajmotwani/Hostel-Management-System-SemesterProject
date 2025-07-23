@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+
+
+{% block main_part %}
+    <h2>Student</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Msg</th>
+          <th scope="col">Time</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+        <tbody>
+        {% for value in total %}
+    
+    
+        <tr>
+          <th scope="row">{{ value.msg }}</th>
+          <td>{{ value.d_time }}</td>
+          <td>
+              <form method="post">
+                  {% csrf_token %}
+                  <Button class="btn btn-danger" type="submit" onclick="SomeDeleteRowFunction()">Delete</Button></form>
+          </td>
+        </tr>
+    
+    
+        {% endfor %}
+        </tbody>
+        </table>
+{% endblock main_part %}
+
+
